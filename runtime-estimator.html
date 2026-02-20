@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Runtime Estimator — How Long Will My Generator Run? | Home Generator Calculator</title>
+  <meta name="description" content="Free generator runtime calculator. Enter generator wattage, tank size, and load percentage. Get estimated runtime in hours, gallons per hour, and total fuel cost.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.homegeneratorcalculator.com/runtime-estimator.html">
+  <meta property="og:site_name" content="Home Generator Calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.homegeneratorcalculator.com/runtime-estimator.html">
+  <meta property="og:title" content="Generator Runtime Estimator — How Long Will My Generator Run?">
+  <meta property="og:description" content="Free generator runtime calculator. Enter generator wattage, tank size, and load percentage. Get estimated runtime in hours and total fuel cost.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Generator Runtime Estimator — How Long Will My Generator Run?">
+  <meta name="twitter:description" content="Free generator runtime calculator. Enter generator wattage, tank size, and load percentage. Get estimated runtime in hours and total fuel cost.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.homegeneratorcalculator.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Runtime Estimator", "item": "https://www.homegeneratorcalculator.com/runtime-estimator.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Generator Runtime Estimator",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Calculate how long your generator will run on a full tank of gas based on wattage and load percentage.",
+    "url": "https://www.homegeneratorcalculator.com/runtime-estimator.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">HomeGen<span>Calc</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generator-size-calculator.html">Generator Sizer</a></li>
+        <li><a href="runtime-estimator.html" class="active">Runtime</a></li>
+        <li><a href="fuel-cost-calculator.html">Fuel Cost</a></li>
+        <li><a href="wattage-guide.html">Wattage Guide</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ PAGE HEADER ═══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Runtime Estimator</span>
+    </nav>
+    <h1>Generator Runtime Estimator</h1>
+    <p>Enter your generator's wattage rating, tank size, and how hard it's working. We estimate hours of runtime and fuel consumption.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
+<main class="section-sm">
+  <div class="container">
+    <div class="page-grid">
+
+      <!-- Primary Column -->
+      <div>
+
+        <!-- ── CALCULATOR ─────────────────────────────────── -->
+        <div id="runtime-calc" class="calc-wrap mb-4">
+          <div class="calc-header">
+            <h2>⏱️ Runtime Estimator</h2>
+            <p>Fuel consumption scales with load. Running at 50% draws roughly half the fuel of 100% load.</p>
+          </div>
+          <div class="calc-body">
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="rt-watts">Generator Rated Watts</label>
+                <input type="number" id="rt-watts" class="form-input" placeholder="e.g. 7500" min="500" max="25000" step="100">
+                <span class="form-hint">The generator's continuous rated output.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="rt-tank">Fuel Tank Size (gallons)</label>
+                <input type="number" id="rt-tank" class="form-input" placeholder="e.g. 6" min="0.5" max="100" step="0.5">
+                <span class="form-hint">Found on the spec sticker or owner's manual.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="rt-fuel-price">Fuel Price (per gallon)</label>
+                <input type="number" id="rt-fuel-price" class="form-input" placeholder="e.g. 3.89" min="0.50" max="20" step="0.01">
+                <span class="form-hint">Optional — used to estimate refuel cost.</span>
+              </div>
+            </div>
+
+            <!-- Load slider -->
+            <div class="form-group" style="margin-top:.5rem;">
+              <label class="form-label" for="rt-load">Current Load: <span id="rt-load-display" style="color:var(--amber);">50%</span></label>
+              <input type="range" id="rt-load" class="range-input" min="25" max="100" step="5" value="50">
+              <div style="display:flex; justify-content:space-between; font-size:.78rem; color:var(--text-muted); margin-top:.3rem;">
+                <span>25% (very light)</span>
+                <span>50% (typical)</span>
+                <span>75% (heavy)</span>
+                <span>100% (max)</span>
+              </div>
+              <span class="form-hint">Most generators are rated at 50% load. Running at 75–100% shortens runtime and lifespan.</span>
+            </div>
+
+            <button id="rt-calc-btn" class="btn btn-primary" style="margin-top:1.25rem; width:100%;">
+              Calculate Runtime
+            </button>
+
+            <!-- Results -->
+            <div class="results-panel hidden" id="rt-results" aria-live="polite">
+              <div class="results-title">📊 RUNTIME RESULTS</div>
+              <div class="results-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="result-stat">
+                  <span class="result-stat-value" id="rt-result-gph" style="color:#4ade80;">—</span>
+                  <span class="result-stat-label">Gallons / Hour</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value" id="rt-result-runtime">—</span>
+                  <span class="result-stat-label">Hours of Runtime</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value stat-running" id="rt-result-days">—</span>
+                  <span class="result-stat-label">Runtime (days + hrs)</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value" id="rt-result-cost" style="color:var(--amber);">—</span>
+                  <span class="result-stat-label">Fuel Cost per Tank</span>
+                </div>
+              </div>
+              <div class="disclaimer">
+                Runtime estimates are based on published fuel consumption curves at rated load. Actual runtime varies with fuel quality, engine condition, elevation, and temperature. Check your owner's manual for model-specific figures.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── CONTENT: Fuel Consumption Guide ───────────── -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Understanding Generator Fuel Consumption</h2>
+          </div>
+          <div class="card-body">
+
+            <p>Manufacturer runtime specs are virtually always published <em>at 50% load</em>. When you run a generator at 75–100% load you'll see significantly shorter runtime. Here's a general reference for common generator sizes:</p>
+
+            <table class="data-table" style="margin: 1rem 0;">
+              <thead>
+                <tr>
+                  <th>Generator Size</th>
+                  <th>At 25% Load</th>
+                  <th>At 50% Load</th>
+                  <th>At 100% Load</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>3,500W</strong> (3.5 gal tank)</td>
+                  <td>~13 hrs</td>
+                  <td class="running-watts">~9 hrs</td>
+                  <td>~5 hrs</td>
+                </tr>
+                <tr>
+                  <td><strong>5,500W</strong> (6 gal tank)</td>
+                  <td>~16 hrs</td>
+                  <td class="running-watts">~10 hrs</td>
+                  <td>~6 hrs</td>
+                </tr>
+                <tr>
+                  <td><strong>7,500W</strong> (6.6 gal tank)</td>
+                  <td>~14 hrs</td>
+                  <td class="running-watts">~9 hrs</td>
+                  <td>~5.5 hrs</td>
+                </tr>
+                <tr>
+                  <td><strong>10,000W</strong> (10 gal tank)</td>
+                  <td>~16 hrs</td>
+                  <td class="running-watts">~10 hrs</td>
+                  <td>~6 hrs</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 style="margin:1.25rem 0 .5rem;">Why Load Percentage Matters</h3>
+            <p>Generators use a throttle-governed engine — the engine works harder as load increases, burning more fuel per hour. The relationship isn't perfectly linear; at very light loads (under 30%) some generators actually become <em>less efficient</em> per watt produced. The sweet spot for most portable generators is 50–75% of rated output.</p>
+
+            <div class="info-box info-box-tip">
+              <span class="info-box-icon">💡</span>
+              <p><strong>Outage planning tip:</strong> Budget for 2–3 tank refills per day for a multi-day storm outage if running at moderate load, especially if using central A/C. A 7,500W generator running at 65% load burns about 0.85 gal/hr — roughly 20 gallons per day. Pre-fill several approved gasoline containers before a storm arrives.</p>
+            </div>
+
+            <h3 style="margin:1.25rem 0 .5rem;">Propane vs. Gasoline Runtime</h3>
+            <p>Dual-fuel generators can run on propane, which stores indefinitely (gasoline degrades in 30–90 days). However, propane is roughly <em>10–15% less efficient</em> than gasoline — a generator rated at 9 hrs on gas will get approximately 7.5–8 hrs on propane. Factor this into your fuel stockpile calculations.</p>
+
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Frequently Asked Questions</h2>
+          </div>
+          <div class="card-body" style="padding-bottom:.5rem;">
+            <div class="faq-list">
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How long will a generator run on 5 gallons of gas?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>It depends entirely on generator size and load. A 3,500W generator running moderate load (50%) burns about 0.5 gal/hr and gets ~10 hours from 5 gallons. A 7,500W generator at moderate load burns ~0.75–0.85 gal/hr for ~6–7 hours. Use the calculator above with your specific values.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Can I add fuel while a generator is running?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>No — this is a serious fire risk. Engine components get extremely hot, and gasoline vapors can ignite. Always turn off the generator, let it cool for at least 10–15 minutes, then refuel away from structures. Never refuel near open flames or while smoking.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How do I know what load percentage I'm running at?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Divide your total running watts by the generator's rated watts. Example: 4,200W on a 7,500W generator = 56% load. Use our <a href="generator-size-calculator.html">Generator Size Calculator</a> to find your total running watts. For the most accurate reading, some generators have a built-in load meter or you can use a clamp meter on the output circuit.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Does running a generator at lower load save fuel?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, but with diminishing returns. Going from 100% to 50% load roughly halves fuel consumption. Going from 50% to 25% saves noticeably less because engine mechanical losses become a higher proportion of fuel burn. Running below 30% for extended periods can also cause "wet stacking" in diesel generators (raw fuel buildup in exhaust) — this is less of a concern on gasoline units.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="card">
+          <div class="card-header"><h3>Related Calculators</h3></div>
+          <div class="card-body">
+            <div class="tools-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+              <a href="generator-size-calculator.html" class="tool-card">
+                <div class="tool-card-icon">⚡</div>
+                <h3>Generator Sizer</h3>
+                <p>Calculate what size you need.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="fuel-cost-calculator.html" class="tool-card">
+                <div class="tool-card-icon">⛽</div>
+                <h3>Fuel Cost Calculator</h3>
+                <p>Multi-day outage fuel budget.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="wattage-guide.html" class="tool-card">
+                <div class="tool-card-icon">📋</div>
+                <h3>Wattage Guide</h3>
+                <p>40+ appliance reference chart.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- / primary column -->
+
+      <!-- ── SIDEBAR ──────────────────────────────────────── -->
+      <aside class="sidebar" aria-label="Sidebar">
+
+        <div class="card mb-4">
+          <div class="card-header" style="background:var(--navy-dark); color:white;">
+            <h4 style="color:white; margin:0;">⛽ Fuel Burn Rates</h4>
+          </div>
+          <div class="card-body" style="padding:0;">
+            <table class="data-table" style="font-size:.82rem;">
+              <thead>
+                <tr>
+                  <th>Watts</th>
+                  <th>gal/hr @ 50%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>2,000W</td><td class="running-watts">0.19</td></tr>
+                <tr><td>3,500W</td><td class="running-watts">0.35</td></tr>
+                <tr><td>5,500W</td><td class="running-watts">0.59</td></tr>
+                <tr><td>7,500W</td><td class="running-watts">0.77</td></tr>
+                <tr><td>10,000W</td><td class="running-watts">1.00</td></tr>
+                <tr><td>12,000W</td><td class="running-watts">1.19</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h4 style="margin:0;">📦 Fuel Storage Tips</h4>
+          </div>
+          <div class="card-body">
+            <ul style="font-size:.85rem; padding-left:1.25rem;">
+              <li>Use approved, sealed gasoline containers</li>
+              <li>Add fuel stabilizer for storage &gt; 30 days</li>
+              <li>Store in a cool, ventilated area away from the home</li>
+              <li>Never store gasoline inside a living space</li>
+              <li>Rotate stored fuel every 3–6 months</li>
+              <li>Label containers with the fill date</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </aside>
+
+    </div><!-- / page-grid -->
+  </div>
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo" style="margin-bottom:.75rem; display:inline-flex;">
+          <div class="logo-icon">⚡</div>
+          <div class="logo-text">HomeGen<span>Calc</span></div>
+        </a>
+        <p class="footer-tagline">Free generator sizing, runtime, and fuel cost calculators for homeowners and emergency planners.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="generator-size-calculator.html">Generator Size Calculator</a></li>
+          <li><a href="runtime-estimator.html">Runtime Estimator</a></li>
+          <li><a href="fuel-cost-calculator.html">Fuel Cost Calculator</a></li>
+          <li><a href="extension-cord-calculator.html">Extension Cord Gauge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul class="footer-links">
+          <li><a href="wattage-guide.html">Appliance Wattage Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Runtime calculations are estimates based on typical fuel consumption data. Actual results vary. Always consult your generator's manual and follow all safety guidelines for operation.
+      </p>
+      <span class="footer-copy">© 2026 Home Generator Calculator</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

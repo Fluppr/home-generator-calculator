@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension Cord Gauge Calculator — What AWG Wire for Generator? | Home Generator Calculator</title>
+  <meta name="description" content="Find the correct extension cord gauge (AWG) for your generator load and cord length. Avoid overheating, voltage drop, and fire hazards. Free instant results.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.homegeneratorcalculator.com/extension-cord-calculator.html">
+  <meta property="og:site_name" content="Home Generator Calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.homegeneratorcalculator.com/extension-cord-calculator.html">
+  <meta property="og:title" content="Extension Cord Gauge Calculator — What AWG Wire for a Generator?">
+  <meta property="og:description" content="Find the correct extension cord gauge (AWG) for your generator load and cord length. Avoid overheating, voltage drop, and fire hazards. Free, instant results.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Extension Cord Gauge Calculator — What AWG Wire for a Generator?">
+  <meta name="twitter:description" content="Find the correct extension cord gauge (AWG) for your generator load and cord length. Avoid overheating and voltage drop. Free, instant results.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.homegeneratorcalculator.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Extension Cord Gauge Calculator", "item": "https://www.homegeneratorcalculator.com/extension-cord-calculator.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Extension Cord Gauge Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Calculate the correct AWG extension cord gauge for your generator wattage and cord length. Prevent overheating and voltage drop.",
+    "url": "https://www.homegeneratorcalculator.com/extension-cord-calculator.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">HomeGen<span>Calc</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generator-size-calculator.html">Generator Sizer</a></li>
+        <li><a href="runtime-estimator.html">Runtime</a></li>
+        <li><a href="fuel-cost-calculator.html">Fuel Cost</a></li>
+        <li><a href="wattage-guide.html">Wattage Guide</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ PAGE HEADER ═══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Extension Cord Gauge Calculator</span>
+    </nav>
+    <h1>Extension Cord Gauge Calculator</h1>
+    <p>Enter your appliance wattage and cord length. We calculate the minimum safe AWG gauge, amperage load, and flag voltage drop risks.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
+<main class="section-sm">
+  <div class="container">
+    <div class="page-grid">
+
+      <!-- Primary Column -->
+      <div>
+
+        <!-- ── CALCULATOR ─────────────────────────────────── -->
+        <div id="ext-cord-calc" class="calc-wrap mb-4">
+          <div class="calc-header">
+            <h2>🔌 Extension Cord Gauge Calculator</h2>
+            <p>A smaller AWG number = thicker wire = handles more current safely. Never use a cord that's too thin.</p>
+          </div>
+          <div class="calc-body">
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="ec-watts">Appliance Wattage</label>
+                <input type="number" id="ec-watts" class="form-input" placeholder="e.g. 1800" min="50" max="15000" step="50">
+                <span class="form-hint">Total watts of all appliances on this cord. Check labels or use our <a href="wattage-guide.html">Wattage Guide</a>.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ec-length">Cord Length (feet)</label>
+                <input type="number" id="ec-length" class="form-input" placeholder="e.g. 50" min="1" max="300" step="1">
+                <span class="form-hint">Longer cords require a heavier (lower AWG) gauge to prevent voltage drop.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ec-voltage">Voltage</label>
+              <select id="ec-voltage" class="form-input">
+                <option value="120" selected>120V (standard household)</option>
+                <option value="240">240V (large appliances)</option>
+              </select>
+            </div>
+
+            <button id="ec-calc-btn" class="btn btn-primary" style="margin-top:1rem; width:100%;">
+              Find Required Gauge
+            </button>
+
+            <!-- Results -->
+            <div class="hidden" id="ec-results" style="margin-top:1.5rem;" aria-live="polite">
+              <div class="gauge-result" id="ec-gauge-box">
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem;">
+                  <div>
+                    <div class="gauge-num" id="ec-gauge-num">—</div>
+                    <div class="gauge-label" id="ec-gauge-label">AWG Required</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div style="font-size:1.4rem; font-weight:700;" id="ec-gauge-amps">— A</div>
+                    <div style="font-size:.8rem; opacity:.8;">Calculated Amperage</div>
+                  </div>
+                </div>
+                <div class="gauge-desc" id="ec-gauge-desc" style="margin-top:.75rem; font-size:.9rem; line-height:1.5;"></div>
+              </div>
+
+              <!-- Voltage drop notice -->
+              <div id="ec-vdrop-notice" style="display:none;" class="info-box info-box-warning" aria-live="polite">
+                <span class="info-box-icon">⚠️</span>
+                <p id="ec-vdrop-text"></p>
+              </div>
+
+              <div class="disclaimer" style="margin-top:1rem;">
+                Gauge recommendations are based on NEC 80% continuous load derate and typical cord ampacity ratings at 120V/60Hz. Always consult an electrician for permanent wiring. For outdoor use, use only cords rated for outdoor service (marked "W" on jacket).
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- AWG Reference Table -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;" id="awg-reference">Extension Cord AWG Gauge Reference Chart</h2>
+          </div>
+          <div class="card-body">
+            <p>Use this table as a quick reference. For heavy loads or long runs, always step up (lower number) one gauge for safety margin.</p>
+            <table class="data-table" style="margin-top:1rem;">
+              <thead>
+                <tr>
+                  <th>AWG Gauge</th>
+                  <th>Max Amperage</th>
+                  <th>Max Watts (120V)</th>
+                  <th>Max Cord Length</th>
+                  <th>Common Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>16 AWG</strong></td>
+                  <td>13A</td>
+                  <td class="running-watts">1,560W</td>
+                  <td>25 ft</td>
+                  <td>Lamps, small electronics, phone chargers</td>
+                </tr>
+                <tr>
+                  <td><strong>14 AWG</strong></td>
+                  <td>15A</td>
+                  <td class="running-watts">1,800W</td>
+                  <td>50 ft</td>
+                  <td>Refrigerators, fans, small appliances</td>
+                </tr>
+                <tr>
+                  <td><strong>12 AWG</strong></td>
+                  <td>20A</td>
+                  <td class="running-watts">2,400W</td>
+                  <td>100 ft</td>
+                  <td>Power tools, space heaters, window A/C units</td>
+                </tr>
+                <tr>
+                  <td><strong>10 AWG</strong></td>
+                  <td>30A</td>
+                  <td class="running-watts">3,600W</td>
+                  <td>100 ft</td>
+                  <td>Large loads, generator to transfer switch</td>
+                </tr>
+                <tr>
+                  <td><strong>8 AWG</strong></td>
+                  <td>40A</td>
+                  <td class="startup-watts">4,800W</td>
+                  <td>50 ft</td>
+                  <td>Heavy-duty generator power cords</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size:.85rem; margin-top:.75rem; color:var(--text-muted);">Ampacity values reflect continuous-duty derating per NEC guidelines (80% of wire capacity). Actual extension cord ratings may vary by manufacturer.</p>
+          </div>
+        </div>
+
+        <!-- Guide Content -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Why Extension Cord Gauge Matters for Generators</h2>
+          </div>
+          <div class="card-body">
+
+            <p>The most common and dangerous mistake when connecting a generator is using an undersized extension cord. An undersized cord does two things:</p>
+
+            <ol>
+              <li><strong>Overheats and potentially catches fire.</strong> Resistance in a thin wire causes heat proportional to current². A 16 AWG cord carrying 15A (the load of a small space heater) will exceed safe operating temperature. The cord jacket melts or ignites, especially if coiled.</li>
+              <li><strong>Causes voltage drop.</strong> Resistance in a long, thin wire reduces voltage at the far end. Sensitive electronics and motors receive lower-than-rated voltage, causing overheating, reduced output, and premature failure. A motor receiving 102V instead of 120V draws extra current to compensate — worsening the problem.</li>
+            </ol>
+
+            <h3 style="margin:1.25rem 0 .5rem;">The Two Variables: Amperage and Length</h3>
+            <p>AWG selection is determined by two factors working together. Amperage determines the minimum gauge; length determines whether you must step up to the next heavier gauge:</p>
+
+            <ul>
+              <li><strong>Amperage (I = P / V):</strong> A 1,440W load on 120V draws 12A. A 14 AWG cord (rated 15A continuous) is borderline adequate on a 25 ft cord but insufficient at 100 ft.</li>
+              <li><strong>Length:</strong> Every foot of wire has resistance. At 50 ft a 14 AWG carries 1,440W safely; at 100 ft you need 12 AWG for the same load due to cumulative voltage drop.</li>
+            </ul>
+
+            <div class="info-box info-box-warning">
+              <span class="info-box-icon">⚠️</span>
+              <p><strong>Never use a coiled extension cord under load.</strong> A coiled 50 ft cord acts like a resistor and generates significant heat. Always unroll completely before use.</p>
+            </div>
+
+            <h3 style="margin:1.25rem 0 .5rem;">Generator-Specific Cords</h3>
+            <p>Most portable generators include a twist-lock 30A NEMA L14-30 outlet (for 4-prong, 240V, 30A connections). If you're using a generator-to-transfer-switch cable or a heavy-duty multi-outlet "spider" cord, ensure it is rated for your generator's full output, not just the load you plan to draw. Using a 10 AWG cord (30A rating) is the minimum for connecting a 7,500W generator at any cord length under 100 ft.</p>
+
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Frequently Asked Questions</h2>
+          </div>
+          <div class="card-body" style="padding-bottom:.5rem;">
+            <div class="faq-list">
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  What gauge extension cord do I need for a generator?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>For most generator connections, you need at least <strong>12 AWG</strong>. Generators that supply 30A circuits require a <strong>10 AWG</strong> cord minimum. Never use 16 AWG for generator connections — the amperage draw from typical loads will exceed its safe capacity, causing the cord to overheat. Use the calculator above for your specific wattage and cord length.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Can I use a 100 ft extension cord with a generator?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, but you must step up to a heavier gauge. A 100 ft cord at a typical load (1,400–2,000W) requires <strong>12 AWG</strong> — one gauge heavier than a 25 ft cord for the same appliance. For loads above 2,400W at 100 ft, use <strong>10 AWG</strong>. Beyond 100 ft, consider whether you can move the generator closer rather than going to an extremely long run.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  What's the difference between AWG 10, 12, 14, and 16?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>AWG (American Wire Gauge) works <em>backwards</em> — a lower number means a thicker, heavier wire: 10 AWG is thicker than 12 AWG, which is thicker than 14 AWG. Thicker wire carries more current safely and loses less voltage over distance. For generator use: 16 AWG is acceptable only for very light loads (lamps, phone chargers) on short runs. 14 AWG is for small appliances 25 ft or less. 12 AWG covers most household appliances up to 100 ft. 10 AWG covers heavy loads and generator power cords.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  What does the "W" on an extension cord mean?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>The "W" suffix in an extension cord's model or jacket marking means it's rated for <strong>outdoor wet locations</strong>. Cords without this rating must only be used indoors on dry surfaces. For generator use (which always requires outdoor operation), you must use a cord with a "W" outdoor rating. Look for cords marked SJTW or STOW on the jacket to confirm outdoor suitability.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="card">
+          <div class="card-header"><h3>Related Calculators</h3></div>
+          <div class="card-body">
+            <div class="tools-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+              <a href="generator-size-calculator.html" class="tool-card">
+                <div class="tool-card-icon">⚡</div>
+                <h3>Generator Sizer</h3>
+                <p>Find your wattage needs first.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="wattage-guide.html" class="tool-card">
+                <div class="tool-card-icon">📋</div>
+                <h3>Wattage Guide</h3>
+                <p>Look up appliance wattages.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="runtime-estimator.html" class="tool-card">
+                <div class="tool-card-icon">⏱️</div>
+                <h3>Runtime Estimator</h3>
+                <p>How long will your fuel last?</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- / primary column -->
+
+      <!-- ── SIDEBAR ──────────────────────────────────────── -->
+      <aside class="sidebar">
+
+        <div class="card mb-4">
+          <div class="card-header" style="background:var(--navy-dark); color:white;">
+            <h4 style="color:white; margin:0;">🔌 AWG Quick Reference</h4>
+          </div>
+          <div class="card-body" style="padding:0;">
+            <table class="data-table" style="font-size:.82rem;">
+              <thead>
+                <tr>
+                  <th>AWG</th>
+                  <th>Max Amps</th>
+                  <th>Max Watts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>16</td><td>13A</td><td class="running-watts">1,560W</td></tr>
+                <tr><td>14</td><td>15A</td><td class="running-watts">1,800W</td></tr>
+                <tr><td>12</td><td>20A</td><td class="running-watts">2,400W</td></tr>
+                <tr><td>10</td><td>30A</td><td class="running-watts">3,600W</td></tr>
+                <tr><td>8</td><td>40A</td><td class="startup-watts">4,800W</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h4 style="margin:0;">✅ Cord Safety Checklist</h4>
+          </div>
+          <div class="card-body">
+            <ul style="font-size:.85rem; padding-left:1.25rem;">
+              <li>Always fully uncoil before use</li>
+              <li>Use outdoor-rated (W) cords only</li>
+              <li>Never run through walls or windows</li>
+              <li>Check cord for damage before each use</li>
+              <li>Never overload with a power strip</li>
+              <li>Use GFCI-protected outlets outdoors</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </aside>
+
+    </div><!-- / page-grid -->
+  </div>
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo" style="margin-bottom:.75rem; display:inline-flex;">
+          <div class="logo-icon">⚡</div>
+          <div class="logo-text">HomeGen<span>Calc</span></div>
+        </a>
+        <p class="footer-tagline">Free generator sizing, runtime, and fuel cost calculators for homeowners and emergency planners.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="generator-size-calculator.html">Generator Size Calculator</a></li>
+          <li><a href="runtime-estimator.html">Runtime Estimator</a></li>
+          <li><a href="fuel-cost-calculator.html">Fuel Cost Calculator</a></li>
+          <li><a href="extension-cord-calculator.html">Extension Cord Gauge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul class="footer-links">
+          <li><a href="wattage-guide.html">Appliance Wattage Guide</a></li>
+          <li><a href="extension-cord-calculator.html#awg-reference">AWG Reference Chart</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Gauge recommendations are for general guidance only. Electrical wiring work must comply with local codes and be performed by a qualified electrician. Home Generator Calculator is not responsible for equipment damage or electrical hazards arising from use of this tool.
+      </p>
+      <span class="footer-copy">© 2026 Home Generator Calculator</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

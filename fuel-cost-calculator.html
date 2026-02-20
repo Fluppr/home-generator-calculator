@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Fuel Cost Calculator — Outage Cost Estimator | Home Generator Calculator</title>
+  <meta name="description" content="Calculate your generator's fuel cost per day, per week, or for an entire outage. Enter wattage, hours per day, duration, and fuel price to get a full cost breakdown.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.homegeneratorcalculator.com/fuel-cost-calculator.html">
+  <meta property="og:site_name" content="Home Generator Calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.homegeneratorcalculator.com/fuel-cost-calculator.html">
+  <meta property="og:title" content="Generator Fuel Cost Calculator — Outage Cost Estimator">
+  <meta property="og:description" content="Calculate your generator's fuel cost per day, week, or entire outage. Enter wattage, hours, duration, and gas price for a full cost breakdown.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Generator Fuel Cost Calculator — Outage Cost Estimator">
+  <meta name="twitter:description" content="Calculate your generator's fuel cost per day, week, or entire outage. Enter wattage, hours, duration, and gas price for a full cost breakdown.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.homegeneratorcalculator.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Fuel Cost Calculator", "item": "https://www.homegeneratorcalculator.com/fuel-cost-calculator.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Generator Fuel Cost Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Calculate how much it costs to run a generator per day, week, or full outage duration based on wattage, hours of use, and current fuel price.",
+    "url": "https://www.homegeneratorcalculator.com/fuel-cost-calculator.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">HomeGen<span>Calc</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generator-size-calculator.html">Generator Sizer</a></li>
+        <li><a href="runtime-estimator.html">Runtime</a></li>
+        <li><a href="fuel-cost-calculator.html" class="active">Fuel Cost</a></li>
+        <li><a href="wattage-guide.html">Wattage Guide</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ PAGE HEADER ═══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Fuel Cost Calculator</span>
+    </nav>
+    <h1>Generator Fuel Cost Calculator</h1>
+    <p>Find out how much your generator will cost to operate per day, per week, or across an entire outage. Adjust generator size, hours of use, and current gas prices.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
+<main class="section-sm">
+  <div class="container">
+    <div class="page-grid">
+
+      <!-- Primary Column -->
+      <div>
+
+        <!-- ── CALCULATOR ─────────────────────────────────── -->
+        <div id="fuel-cost-calc" class="calc-wrap mb-4">
+          <div class="calc-header">
+            <h2>⛽ Fuel Cost Calculator</h2>
+            <p>Enter your generator's output and operating schedule to project total fuel expense.</p>
+          </div>
+          <div class="calc-body">
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="fc-watts">Generator Load (Watts)</label>
+                <input type="number" id="fc-watts" class="form-input" placeholder="e.g. 5000" min="500" max="25000" step="100">
+                <span class="form-hint">Your actual running load, not the generator's max rating. Use our <a href="generator-size-calculator.html">Generator Sizer</a> to find this.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fc-hours">Hours of Use Per Day</label>
+                <input type="number" id="fc-hours" class="form-input" placeholder="e.g. 16" min="0.5" max="24" step="0.5">
+                <span class="form-hint">Most homeowners run 12–18 hours/day during outages, shutting off overnight.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fc-days">Outage Duration (Days)</label>
+                <input type="number" id="fc-days" class="form-input" placeholder="e.g. 5" min="1" max="30" step="1">
+                <span class="form-hint">Average major outage: 2–5 days. Hurricane season events: up to 14 days.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fc-fuel-price">Fuel Price (per gallon)</label>
+                <input type="number" id="fc-fuel-price" class="form-input" placeholder="e.g. 3.89" min="0.50" max="20" step="0.01">
+                <span class="form-hint">Check GasBuddy or your local station for current pricing.</span>
+              </div>
+            </div>
+
+            <button id="fc-calc-btn" class="btn btn-primary" style="margin-top:1.25rem; width:100%;">
+              Calculate Fuel Cost
+            </button>
+
+            <!-- Results -->
+            <div class="results-panel hidden" id="fc-results" aria-live="polite">
+              <div class="results-title">📊 FUEL COST BREAKDOWN</div>
+
+              <div class="results-grid">
+                <div class="result-stat">
+                  <span class="result-stat-value" id="fc-gph" style="color:#4ade80;">—</span>
+                  <span class="result-stat-label">Gallons per Hour</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value" id="fc-daily-gals">—</span>
+                  <span class="result-stat-label">Gallons per Day</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value stat-running" id="fc-daily-cost">—</span>
+                  <span class="result-stat-label">Cost per Day</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value" id="fc-weekly-cost" style="color:var(--amber);">—</span>
+                  <span class="result-stat-label">Cost per Week</span>
+                </div>
+              </div>
+
+              <!-- Total panel -->
+              <div class="recommendation-box" style="margin-top:1.25rem;">
+                <div class="rec-label">💵 TOTAL ESTIMATED OUTAGE COST</div>
+                <div class="rec-size" id="fc-total-cost">—</div>
+                <div class="rec-type" id="fc-total-gals" style="color:#94a3b8; font-size:.88rem;"></div>
+                <div class="rec-note">Based on <span id="fc-days-span">—</span>-day outage running <span id="fc-hours-span">—</span> hours/day</div>
+              </div>
+
+              <div class="disclaimer">
+                Fuel consumption estimates are based on typical generator efficiency curves. Actual consumption varies by generator brand, age, engine condition, elevation, and ambient temperature.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── CONTENT ──────────────────────────────────────── -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">How Much Does It Cost to Run a Generator?</h2>
+          </div>
+          <div class="card-body">
+
+            <p>Generator operating cost depends on three variables: how big the load is (watts), how many hours per day the generator runs, and the price of gasoline. Here is a real-world reference for the most common scenarios, assuming $3.75/gallon gasoline:</p>
+
+            <table class="data-table" style="margin:1rem 0;">
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Load</th>
+                  <th>Hours/Day</th>
+                  <th>Daily Cost</th>
+                  <th>5-Day Outage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Essentials only</td>
+                  <td>2,500W</td>
+                  <td>16 hrs</td>
+                  <td class="running-watts">~$18</td>
+                  <td>~$90</td>
+                </tr>
+                <tr>
+                  <td>+ Window A/C</td>
+                  <td>3,800W</td>
+                  <td>16 hrs</td>
+                  <td class="running-watts">~$27</td>
+                  <td>~$135</td>
+                </tr>
+                <tr>
+                  <td>+ Central A/C</td>
+                  <td>5,500W</td>
+                  <td>16 hrs</td>
+                  <td class="running-watts">~$37</td>
+                  <td>~$185</td>
+                </tr>
+                <tr>
+                  <td>Heavy load</td>
+                  <td>8,000W</td>
+                  <td>18 hrs</td>
+                  <td class="startup-watts">~$64</td>
+                  <td>~$320</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 style="margin:1.25rem 0 .5rem;">Tips to Reduce Generator Fuel Costs</h3>
+            <ul>
+              <li><strong>Stagger high-draw appliances.</strong> Don't run the electric kettle, microwave, and space heater simultaneously. Turn off the A/C at night if temperatures allow.</li>
+              <li><strong>Reduce idle time.</strong> Shut the generator off when sleeping (if safe to do so with your appliance needs) or when away. An 8-hour overnight shutdown saves ~5–8 gallons on a 7,500W unit.</li>
+              <li><strong>Use LED lighting.</strong> A single 60W incandescent bulb vs. a 9W LED: 12 hours/day × 5 days = 3 kWh total. Across 20 bulbs, the savings add up to meaningful runtime reduction.</li>
+              <li><strong>Pre-cool your refrigerator.</strong> Refrigerators run more efficiently when starting from a cold temperature. Run it before an incoming storm to reduce average compressor cycling load.</li>
+              <li><strong>Consider dual fuel.</strong> Propane doesn't degrade in storage the way gasoline does. If you already own a propane grill or BBQ setup, a dual-fuel generator lets you use existing fuel sources.</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Frequently Asked Questions</h2>
+          </div>
+          <div class="card-body" style="padding-bottom:.5rem;">
+            <div class="faq-list">
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How much gas does a generator use per hour?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>It depends on size and load. A common 7,500W generator running at 50% load uses about 0.75–0.85 gallons/hour. A smaller 3,500W unit uses ~0.4–0.5 gal/hr. At 100% load, consumption roughly doubles. Use the calculator above for a specific estimate.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How much does it cost to run a 7,500W generator for a week?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Running 16 hours/day at ~5,000W actual load (67% of rated), a 7,500W generator burns approximately 0.7 gal/hr × 16 hrs = 11.2 gal/day. At $3.75/gal, that's ~$42/day or ~$294 for a 7-day outage. At higher fuel prices or heavier loads, budget $350–$450 per week.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Is a natural gas standby generator cheaper to run?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Often yes. Natural gas rates average $0.80–$1.20 per therm nationally. Large standby generators (12,000–20,000W) use roughly 200–250 cubic feet of natural gas per hour at full load — about 2–2.5 therms. At $1.00/therm that's $2–$2.50/hr vs. $3–$5/hr for gasoline. The main advantage is unlimited runtime from a utility gas line — no refueling.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="card">
+          <div class="card-header"><h3>Related Calculators</h3></div>
+          <div class="card-body">
+            <div class="tools-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+              <a href="generator-size-calculator.html" class="tool-card">
+                <div class="tool-card-icon">⚡</div>
+                <h3>Generator Sizer</h3>
+                <p>Find your running load wattage.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="runtime-estimator.html" class="tool-card">
+                <div class="tool-card-icon">⏱️</div>
+                <h3>Runtime Estimator</h3>
+                <p>How long per tank of fuel?</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="extension-cord-calculator.html" class="tool-card">
+                <div class="tool-card-icon">🔌</div>
+                <h3>Extension Cord Gauge</h3>
+                <p>Safe wire gauge for your load.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- / primary column -->
+
+      <!-- ── SIDEBAR ──────────────────────────────────────── -->
+      <aside class="sidebar">
+
+        <div class="card mb-4">
+          <div class="card-header" style="background:var(--navy-dark); color:white;">
+            <h4 style="color:white; margin:0;">💰 Daily Cost Reference</h4>
+          </div>
+          <div class="card-body" style="padding:0;">
+            <table class="data-table" style="font-size:.82rem;">
+              <thead>
+                <tr>
+                  <th>Load (W)</th>
+                  <th>16 hrs @ $3.75</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>2,000</td><td class="running-watts">~$11</td></tr>
+                <tr><td>3,500</td><td class="running-watts">~$18</td></tr>
+                <tr><td>5,000</td><td class="running-watts">~$26</td></tr>
+                <tr><td>7,500</td><td class="running-watts">~$37</td></tr>
+                <tr><td>10,000</td><td class="startup-watts">~$48</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h4 style="margin:0;">⚡ Save on Fuel</h4>
+          </div>
+          <div class="card-body">
+            <ul style="font-size:.85rem; padding-left:1.25rem;">
+              <li>Shut off overnight if safe</li>
+              <li>Stagger high-draw appliances</li>
+              <li>Use LED bulbs throughout</li>
+              <li>Pre-cool the refrigerator</li>
+              <li>Use inverter for smaller loads</li>
+              <li>Consider dual-fuel generator</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </aside>
+
+    </div><!-- / page-grid -->
+  </div>
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo" style="margin-bottom:.75rem; display:inline-flex;">
+          <div class="logo-icon">⚡</div>
+          <div class="logo-text">HomeGen<span>Calc</span></div>
+        </a>
+        <p class="footer-tagline">Free generator sizing, runtime, and fuel cost calculators for homeowners and emergency planners.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="generator-size-calculator.html">Generator Size Calculator</a></li>
+          <li><a href="runtime-estimator.html">Runtime Estimator</a></li>
+          <li><a href="fuel-cost-calculator.html">Fuel Cost Calculator</a></li>
+          <li><a href="extension-cord-calculator.html">Extension Cord Gauge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul class="footer-links">
+          <li><a href="wattage-guide.html">Appliance Wattage Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Fuel cost calculations are estimates based on typical generator efficiency. Actual costs vary by generator model, condition, and local fuel prices. Home Generator Calculator is not liable for purchasing decisions made based on these estimates.
+      </p>
+      <span class="footer-copy">© 2026 Home Generator Calculator</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>

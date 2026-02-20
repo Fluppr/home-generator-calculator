@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Home Generator Calculator</title>
+  <meta name="description" content="Contact the Home Generator Calculator team with questions, feedback, or data corrections. We welcome input from homeowners, electricians, and engineers.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.homegeneratorcalculator.com/contact.html">
+  <meta property="og:site_name" content="Home Generator Calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.homegeneratorcalculator.com/contact.html">
+  <meta property="og:title" content="Contact Us | Home Generator Calculator">
+  <meta property="og:description" content="Contact the Home Generator Calculator team with questions, feedback, or data corrections.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact Us | Home Generator Calculator">
+  <meta name="twitter:description" content="Contact the Home Generator Calculator team with questions, feedback, or data corrections.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.homegeneratorcalculator.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.homegeneratorcalculator.com/contact.html" }
+    ]
+  }
+  </script>
+  <style>
+    .contact-form-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .form-field { margin-bottom: 1.25rem; }
+    .form-field label {
+      display: block;
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--text);
+      margin-bottom: .4rem;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: .65rem .9rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: .95rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color var(--transition);
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+      background: #fff;
+    }
+    .form-field textarea { resize: vertical; min-height: 130px; }
+    .form-submit-btn {
+      display: inline-block;
+      padding: .75rem 2rem;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--transition);
+      font-family: inherit;
+    }
+    .form-submit-btn:hover { background: var(--navy-light); }
+    .contact-aside {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-aside h3 { margin-bottom: 1rem; }
+    .contact-reason {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .contact-reason-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .contact-reason-text h4 { font-size: .95rem; margin-bottom: .2rem; }
+    .contact-reason-text p { font-size: .85rem; margin: 0; }
+    #contact-success {
+      display: none;
+      padding: 1.5rem;
+      background: var(--green-bg);
+      border: 1px solid var(--green);
+      border-radius: var(--radius);
+      text-align: center;
+      color: var(--green);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">HomeGen<span>Calc</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generator-size-calculator.html">Generator Sizer</a></li>
+        <li><a href="runtime-estimator.html">Runtime</a></li>
+        <li><a href="fuel-cost-calculator.html">Fuel Cost</a></li>
+        <li><a href="wattage-guide.html">Wattage Guide</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ PAGE HEADER ═══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Contact</span>
+    </nav>
+    <h1>Contact Us</h1>
+    <p>Have a question, spotted an inaccuracy, or want to suggest a new calculator? We're listening.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
+<main class="section-sm">
+  <div class="container">
+    <div class="page-grid">
+
+      <!-- Contact Form -->
+      <section>
+        <div class="contact-form-wrap">
+          <h2 style="margin-bottom:1.25rem;">Send Us a Message</h2>
+          <div id="contact-success">
+            <p style="margin:0;">✓ Message sent! We'll get back to you as soon as possible.</p>
+          </div>
+          <form id="contact-form" action="https://formspree.io/f/mkovvavv" method="POST" novalidate>
+            <div class="form-field">
+              <label for="contact-name">Your Name <span style="color:var(--red);">*</span></label>
+              <input type="text" id="contact-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email Address <span style="color:var(--red);">*</span></label>
+              <input type="email" id="contact-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="">— Select a topic —</option>
+                <option value="data-correction">Wattage data correction</option>
+                <option value="calculator-bug">Calculator bug report</option>
+                <option value="new-tool">Suggest a new tool</option>
+                <option value="privacy">Privacy / GDPR / CCPA request</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="contact-message">Message <span style="color:var(--red);">*</span></label>
+              <textarea id="contact-message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="info-box" style="margin-top:1.25rem;">
+          <strong>Response time:</strong> We aim to respond within 2 business days. For complex wattage or electrical questions we may take a little longer to verify our answer with reference sources.
+        </div>
+      </section>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="contact-aside">
+          <h3>Why Contact Us?</h3>
+          <div class="contact-reason">
+            <div class="contact-reason-icon">📋</div>
+            <div class="contact-reason-text">
+              <h4>Data Corrections</h4>
+              <p>If you find an appliance wattage that seems wrong, let us know. We verify against manufacturer specs and update the database.</p>
+            </div>
+          </div>
+          <div class="contact-reason">
+            <div class="contact-reason-icon">🪲</div>
+            <div class="contact-reason-text">
+              <h4>Bug Reports</h4>
+              <p>If a calculator gives a clearly wrong result or a button doesn't work, please describe what you did and what you expected.</p>
+            </div>
+          </div>
+          <div class="contact-reason">
+            <div class="contact-reason-icon">💡</div>
+            <div class="contact-reason-text">
+              <h4>Tool Suggestions</h4>
+              <p>Need a transfer switch calculator? Solar backup sizing? Tell us what real-world problem you're trying to solve.</p>
+            </div>
+          </div>
+          <div class="contact-reason">
+            <div class="contact-reason-icon">⚖️</div>
+            <div class="contact-reason-text">
+              <h4>Privacy Requests</h4>
+              <p>For GDPR / CCPA rights requests (data access, erasure, etc.), please select "Privacy / GDPR / CCPA request" in the Subject field.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-aside" style="margin-top:1.25rem;">
+          <h3 style="margin-bottom:.75rem;">Quick Links</h3>
+          <ul class="footer-links" style="padding-left:0; list-style:none;">
+            <li style="margin-bottom:.5rem;"><a href="privacy.html">Privacy Policy</a></li>
+            <li style="margin-bottom:.5rem;"><a href="about.html">About Home Generator Calculator</a></li>
+            <li style="margin-bottom:.5rem;"><a href="wattage-guide.html">Appliance Wattage Guide</a></li>
+            <li><a href="generator-size-calculator.html">Generator Size Calculator</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo" style="margin-bottom:.75rem; display:inline-flex;">
+          <div class="logo-icon">⚡</div>
+          <div class="logo-text">HomeGen<span>Calc</span></div>
+        </a>
+        <p class="footer-tagline">Free home generator sizing tools for homeowners and emergency planners. No signup. No lead forms. Just math.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="generator-size-calculator.html">Generator Size Calculator</a></li>
+          <li><a href="runtime-estimator.html">Runtime Estimator</a></li>
+          <li><a href="fuel-cost-calculator.html">Fuel Cost Calculator</a></li>
+          <li><a href="extension-cord-calculator.html">Extension Cord Gauge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <ul class="footer-links">
+          <li><a href="wattage-guide.html">Appliance Wattage Guide</a></li>
+          <li><a href="wattage-guide.html#startup-watts">Understanding Surge Watts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> All calculator outputs include a 20% safety buffer and are intended as general guidance only. Wattage figures are approximations based on industry averages. Always consult a licensed electrician for permanent installations.
+      </p>
+      <span class="footer-copy">© 2026 Home Generator Calculator. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+<script>
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name    = (document.getElementById('contact-name').value || '').trim();
+    var email   = (document.getElementById('contact-email').value || '').trim();
+    var message = (document.getElementById('contact-message').value || '').trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in your name, email address, and message.');
+      return;
+    }
+
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      alert('Network error. Please check your connection and try again.');
+    });
+  });
+</script>
+</body>
+</html>

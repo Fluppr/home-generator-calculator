@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Size Calculator — What Size Generator Do I Need? | Home Generator Calculator</title>
+  <meta name="description" content="Free generator size calculator. Select your appliances, accounts for startup surge watts automatically. Get a wattage recommendation with a 20% safety buffer. No signup.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.homegeneratorcalculator.com/generator-size-calculator.html">
+  <meta property="og:site_name" content="Home Generator Calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.homegeneratorcalculator.com/generator-size-calculator.html">
+  <meta property="og:title" content="Generator Size Calculator — What Size Generator Do I Need?">
+  <meta property="og:description" content="Free generator size calculator. Select your appliances, accounts for startup surge watts automatically. Get a wattage recommendation with a 20% safety buffer.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Generator Size Calculator — What Size Generator Do I Need?">
+  <meta name="twitter:description" content="Free generator size calculator. Select your appliances, accounts for startup surge watts automatically. Get a wattage recommendation with a 20% safety buffer.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Schema.org: SoftwareApplication (calculator tool) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Generator Size Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Calculate what size generator you need based on your household appliances. Accounts for startup surge watts. Free, instant, no signup required.",
+    "url": "https://www.homegeneratorcalculator.com/generator-size-calculator.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.homegeneratorcalculator.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Generator Size Calculator", "item": "https://www.homegeneratorcalculator.com/generator-size-calculator.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What size generator do I need for a 2,000 sq ft house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 2,000 sq ft house typically needs 5,000–8,500W to power essential circuits: refrigerator, central A/C (or window unit), furnace fan, some lights, and phone chargers. If you want to also run an electric dryer or water heater, you'll need 10,000W or more. Use the calculator above to total your specific appliances."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the most important factor when sizing a generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Startup (surge) watts. When electric motors start — air conditioners, refrigerators, sump pumps, well pumps — they briefly draw 3–6 times their running wattage. A generator that can't handle this surge will stall or trip. Always calculate peak load (running watts + largest startup surge) rather than just the sum of running watts."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">HomeGen<span>Calc</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="generator-size-calculator.html" class="active">Generator Sizer</a></li>
+        <li><a href="runtime-estimator.html">Runtime</a></li>
+        <li><a href="fuel-cost-calculator.html">Fuel Cost</a></li>
+        <li><a href="wattage-guide.html">Wattage Guide</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ PAGE HEADER ═══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Generator Size Calculator</span>
+    </nav>
+    <h1>Generator Size Calculator</h1>
+    <p>Add your appliances below. We calculate running load, startup surge, and recommend the minimum generator size — including a 20% safety buffer.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
+<main class="section-sm">
+  <div class="container">
+    <div class="page-grid">
+
+      <!-- Primary Column -->
+      <div>
+
+        <!-- ── CALCULATOR ─────────────────────────────────── -->
+        <div id="gen-calc" class="calc-wrap mb-4">
+
+          <div class="calc-header">
+            <h2>⚡ Generator Size Calculator</h2>
+            <p>Click appliances to add them. Adjust quantities as needed.</p>
+          </div>
+
+          <div class="calc-body">
+
+            <!-- Step 1: Category filter -->
+            <div style="margin-bottom:1rem;">
+              <div class="form-label" style="margin-bottom:.5rem;">Step 1 — Filter by Category</div>
+              <div class="appliance-categories" role="group" aria-label="Appliance categories">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Step 2: Appliance picker -->
+            <div style="margin-bottom:1.25rem;">
+              <div class="form-label" style="margin-bottom:.5rem;">Step 2 — Select Appliances</div>
+              <div class="appliance-list" role="list" aria-label="Appliance list">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Step 3: Selected list -->
+            <div>
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:.5rem;">
+                <div class="form-label" style="margin:0;">Step 3 — Your Selection</div>
+                <button class="btn btn-outline calc-btn-clear" style="padding:.3rem .7rem; font-size:.8rem;">
+                  Clear All
+                </button>
+              </div>
+              <div class="selected-list" aria-live="polite" aria-label="Selected appliances">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel hidden" aria-live="polite" role="region" aria-label="Generator size recommendation">
+              <div class="results-title">📊 CALCULATION RESULTS</div>
+
+              <div class="results-grid">
+                <div class="result-stat">
+                  <span class="result-stat-value stat-running">—</span>
+                  <span class="result-stat-label">Total Running Watts</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value stat-surge" style="color:#fed7aa;">—</span>
+                  <span class="result-stat-label">Largest Startup Surge</span>
+                </div>
+                <div class="result-stat">
+                  <span class="result-stat-value stat-peak">—</span>
+                  <span class="result-stat-label">Peak Load</span>
+                </div>
+              </div>
+
+              <!-- Surge warning -->
+              <div class="surge-warning" style="display:none;" aria-live="polite">
+                <span>⚠️</span>
+                <span>Your load includes a <strong class="surge-app">—</strong>. Ensure your generator's <em>peak/surge</em> rating covers this spike, not just its rated output.</span>
+              </div>
+
+              <!-- Recommendation box -->
+              <div class="recommendation-box">
+                <div class="rec-label">✅ MINIMUM RECOMMENDED GENERATOR SIZE</div>
+                <div class="rec-size stat-buffer">—</div>
+                <div class="rec-type" style="color:#94a3b8; font-size:.88rem;"></div>
+                <div class="rec-note">⚡ Includes 20% safety buffer above calculated peak load</div>
+              </div>
+
+              <!-- Disclaimer -->
+              <div class="disclaimer">
+                Results are estimates based on typical appliance wattages. Actual loads vary. Always consult a licensed electrician before purchasing or installing generator equipment. When in doubt, size up.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── BUYING GUIDE CONTENT ─────────────────────── -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">How to Use This Calculator</h2>
+          </div>
+          <div class="card-body">
+            <p>Getting generator sizing right requires accounting for more than just the sum of your appliances' running wattages. Here is the method the calculator uses:</p>
+
+            <h3 style="margin:1.25rem 0 .5rem;">1. Identify Your Critical Load</h3>
+            <p>Start by deciding which appliances must run during an outage. For most homeowners this means: refrigerator, one HVAC unit (or window A/C), furnace fan, sump pump or well pump, some lighting, and phone/laptop charging. Avoid adding non-essential high-draw items like electric dryers or water heaters unless you specifically need them during an emergency.</p>
+
+            <h3 style="margin:1.25rem 0 .5rem;">2. Account for Startup Surge Watts</h3>
+            <p>Any appliance with an electric motor — air conditioners, pumps, refrigerator compressors — draws a brief power spike when starting. This surge can be 3–6× the running wattage and lasts less than a second. Your generator must handle this spike without stalling. The calculator identifies the single largest surge in your selection and adds its delta (surge minus running) to your total running load to arrive at peak load.</p>
+
+            <div class="info-box info-box-warning">
+              <span class="info-box-icon">⚠️</span>
+              <p><strong>Common mistake:</strong> Selecting a generator based only on total running watts. A 5,000W generator is typically rated at 5,000W <em>continuous</em> — but its surge (peak) rating may be 6,250W. If your startup surge exceeds that peak rating, the generator will stall.</p>
+            </div>
+
+            <h3 style="margin:1.25rem 0 .5rem;">3. The 20% Buffer</h3>
+            <p>The calculator's recommendation always adds 20% above the calculated peak load. This buffer accounts for appliance variation (older motors draw more), long-term generator wear, temperature derating (generators lose 3–5% output per 1,000 ft of elevation and output drops in heat), and allows headroom to add an appliance later.</p>
+
+            <h3 style="margin:1.25rem 0 .5rem;">4. Match to a Standard Size</h3>
+            <p>Generators are sold in standard wattage increments. Once you have a recommended wattage, buy the nearest <em>larger</em> standard size. Our results recommend the nearest standard size equal to or above your calculated need.</p>
+          </div>
+        </div>
+
+        <!-- ── GENERATOR TYPE GUIDE ─────────────────────── -->
+        <div class="card mb-4" id="generator-types">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Choosing the Right Generator Type</h2>
+          </div>
+          <div class="card-body">
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+
+              <div style="border:1.5px solid var(--border-light); border-radius:var(--radius); padding:1.25rem;">
+                <div style="font-size:1.5rem; margin-bottom:.5rem;">🔧</div>
+                <h4>Portable Generator</h4>
+                <ul style="margin-top:.5rem; font-size:.88rem;">
+                  <li>1,800W – 12,000W</li>
+                  <li>Gasoline powered</li>
+                  <li>Manual start</li>
+                  <li>Must run outdoors</li>
+                  <li>Cost: $400 – $2,500</li>
+                  <li>Best for: <strong>occasional outages</strong></li>
+                </ul>
+              </div>
+
+              <div style="border:1.5px solid var(--border-light); border-radius:var(--radius); padding:1.25rem;">
+                <div style="font-size:1.5rem; margin-bottom:.5rem;">🏠</div>
+                <h4>Inverter Generator</h4>
+                <ul style="margin-top:.5rem; font-size:.88rem;">
+                  <li>1,000W – 7,500W</li>
+                  <li>Quieter, cleaner power</li>
+                  <li>Safe for electronics</li>
+                  <li>More fuel efficient</li>
+                  <li>Cost: $600 – $3,500</li>
+                  <li>Best for: <strong>sensitive electronics, camping</strong></li>
+                </ul>
+              </div>
+
+              <div style="border:1.5px solid var(--amber-light); border-radius:var(--radius); padding:1.25rem; grid-column: span 2;">
+                <div style="font-size:1.5rem; margin-bottom:.5rem;">⚡</div>
+                <h4>Home Standby Generator <span class="badge badge-amber">Auto-Start</span></h4>
+                <ul style="margin-top:.5rem; font-size:.88rem;">
+                  <li>7,000W – 20,000W+</li>
+                  <li>Natural gas or propane</li>
+                  <li>Starts automatically within seconds of outage</li>
+                  <li>Permanently plumbed and wired</li>
+                  <li>Cost: $3,000 – $15,000+ installed</li>
+                  <li>Best for: <strong>frequent outages, medical equipment, whole-home coverage</strong></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="info-box info-box-tip">
+              <span class="info-box-icon">💡</span>
+              <p>If your calculated need is under 5,000W and outages in your area are infrequent, a portable generator is usually the best value. For needs over 8,000W, or if you have medical equipment requiring uninterrupted power, a home standby generator is the right choice.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── FAQ ────────────────────────────────────────── -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2 style="font-size:1.25rem;">Frequently Asked Questions</h2>
+          </div>
+          <div class="card-body" style="padding-bottom:.5rem;">
+            <div class="faq-list">
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  What size generator do I need for a 2,000 sq ft house?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>A 2,000 sq ft home running essential circuits — refrigerator, central A/C (2 ton), furnace fan, lights, and phone chargers — typically needs <strong>7,000–9,000W</strong>. Without central A/C (using a window unit instead), you can often get by with a 5,500–6,500W generator. Use the calculator above with your specific appliances for an accurate figure.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Can I run my central air conditioner on a generator?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, but your generator must handle the startup surge. A 2-ton central A/C runs at ~2,800W but surges to ~8,000W at startup. A generator with a 7,000W rated output typically has a 8,750W surge rating — just enough. A 3-ton unit surges to ~9,800W and needs a larger generator. Check your specific unit's surge wattage, cross-reference with your generator's peak/surge rating.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  What size generator do I need just for the essentials?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>A minimum essential load (refrigerator, sump pump, lights, cell phone charging, and a few fans) typically totals around 2,000–3,500W running. With surge added and the 20% buffer, a <strong>3,500W–5,000W generator</strong> handles most "essentials only" scenarios. If you have a sump pump and want a window A/C, budget for a 5,500W unit.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  How do I calculate generator wattage needs manually?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <ol>
+                    <li>List every appliance you want to power.</li>
+                    <li>Find each appliance's <strong>running watts</strong> (usually on a label or spec sheet).</li>
+                    <li>Sum all running watts — this is your <em>running load</em>.</li>
+                    <li>Find the appliance with the highest <strong>startup surge</strong>. Add (startup watts − running watts) to your running load total — this is your <em>peak load</em>.</li>
+                    <li>Multiply peak load × 1.2 (20% buffer) = <em>minimum generator size</em>.</li>
+                    <li>Buy the nearest standard generator size equal to or above that number.</li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                  Can I run two air conditioners on one generator?
+                  <i class="faq-icon">▾</i>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, but be aware that only <em>one</em> unit will be starting at any given moment — so the surge calculation uses only the largest single startup surge, not both. The running load includes both units simultaneously. Two 2-ton A/C units (2,800W each = 5,600W running) plus the largest surge (8,000W including 5,200W delta for one unit) = 10,800W peak. With 20% buffer that's ~13,000W. A 14,000W generator would handle this scenario.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="card">
+          <div class="card-header"><h3>Related Calculators</h3></div>
+          <div class="card-body">
+            <div class="tools-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+              <a href="runtime-estimator.html" class="tool-card">
+                <div class="tool-card-icon">⏱️</div>
+                <h3>Runtime Estimator</h3>
+                <p>How long will your fuel last?</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="fuel-cost-calculator.html" class="tool-card">
+                <div class="tool-card-icon">⛽</div>
+                <h3>Fuel Cost Calculator</h3>
+                <p>Cost to run per day or outage.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+              <a href="extension-cord-calculator.html" class="tool-card">
+                <div class="tool-card-icon">🔌</div>
+                <h3>Extension Cord Gauge</h3>
+                <p>Safe wire gauge for your load.</p>
+                <span class="tool-card-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- / primary column -->
+
+      <!-- ── SIDEBAR ──────────────────────────────────────── -->
+      <aside class="sidebar" aria-label="Sidebar">
+
+        <!-- Quick reference card -->
+        <div class="card mb-4">
+          <div class="card-header" style="background:var(--navy-dark); color:white;">
+            <h4 style="color:white; margin:0;">⚡ Quick Reference</h4>
+          </div>
+          <div class="card-body" style="padding:0;">
+            <table class="data-table" style="font-size:.82rem;">
+              <thead>
+                <tr>
+                  <th>Need</th>
+                  <th>Generator</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Basics only</td><td class="running-watts">3,500W</td></tr>
+                <tr><td>+ Window A/C</td><td class="running-watts">5,500W</td></tr>
+                <tr><td>+ Central A/C</td><td class="running-watts">8,500W</td></tr>
+                <tr><td>Whole home</td><td class="running-watts">12,000W+</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Safety tips -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h4 style="margin:0;">🛡️ Safety Reminders</h4>
+          </div>
+          <div class="card-body">
+            <ul style="font-size:.85rem; padding-left:1.25rem;">
+              <li>Never run a generator indoors or in a garage</li>
+              <li>Keep generator 20+ feet from windows and doors</li>
+              <li>Use a CO detector inside your home</li>
+              <li>Never backfeed utility power — use a transfer switch</li>
+              <li>Allow generator to cool before refueling</li>
+              <li>Use GFCI-protected extension cords outdoors</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </aside>
+
+    </div><!-- / page-grid -->
+  </div>
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo" style="margin-bottom:.75rem; display:inline-flex;">
+          <div class="logo-icon">⚡</div>
+          <div class="logo-text">HomeGen<span>Calc</span></div>
+        </a>
+        <p class="footer-tagline">Free home generator sizing tools for homeowners and emergency planners. No signup. No lead forms. Just math.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul class="footer-links">
+          <li><a href="generator-size-calculator.html">Generator Size Calculator</a></li>
+          <li><a href="runtime-estimator.html">Runtime Estimator</a></li>
+          <li><a href="fuel-cost-calculator.html">Fuel Cost Calculator</a></li>
+          <li><a href="extension-cord-calculator.html">Extension Cord Gauge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <ul class="footer-links">
+          <li><a href="wattage-guide.html">Appliance Wattage Guide</a></li>
+          <li><a href="wattage-guide.html#startup-watts">Understanding Surge Watts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Calculator outputs include a 20% safety buffer and are intended as general guidance only. Always consult a licensed electrician for permanent generator installations. Home Generator Calculator is not liable for equipment damage or personal injury arising from use of these tools.
+      </p>
+      <span class="footer-copy">© 2026 Home Generator Calculator</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=2"></script>
+</body>
+</html>
