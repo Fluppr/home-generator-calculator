@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ── Cookie Consent Banner ────────────────────────────────── */
 function initCookieBanner() {
-  const STORAGE_KEY = 'powercalc_cookie_consent';
+  const STORAGE_KEY = 'hgc_cookie_consent';
   const consent = localStorage.getItem(STORAGE_KEY);
   if (consent) return; // already decided
 
