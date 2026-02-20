@@ -46,6 +46,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a { color: var(--navy); text-decoration: none; transition: color var(--transition); }
@@ -1507,9 +1508,15 @@ li { margin-bottom: .35rem; }
 }
 
 /* ── Override Inline 2-Column Grids on Mobile ─────────────── */
-@media (max-width: 580px) {
+/* Attribute selector catches all inline grid-template-columns:1fr 1fr  */
+@media (max-width: 700px) {
   [style*="grid-template-columns:1fr 1fr"],
   [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  /* index.html Why It Matters section */
+  .why-matters-grid {
     grid-template-columns: 1fr !important;
   }
 }
