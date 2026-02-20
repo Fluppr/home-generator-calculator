@@ -568,10 +568,50 @@ function initNav() {
   });
 }
 
+/* ── Mobile Nav Toggle ────────────────────────────────────── */
+function initMobileNav() {
+  const headerInner = document.querySelector('.header-inner');
+  const nav = document.querySelector('.site-nav');
+  if (!headerInner || !nav) return;
+
+  const btn = document.createElement('button');
+  btn.className = 'nav-toggle';
+  btn.setAttribute('aria-label', 'Toggle navigation');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.innerHTML = '<span></span><span></span><span></span>';
+  headerInner.appendChild(btn);
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = nav.classList.toggle('nav-open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close when a nav link is clicked
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close when clicking outside the header
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.site-header')) {
+      nav.classList.remove('nav-open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 /* ── Auto-init ────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initNav();
+  initMobileNav();
   initCookieBanner();
 
   if (document.getElementById('gen-calc'))

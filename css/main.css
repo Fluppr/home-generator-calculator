@@ -1368,3 +1368,188 @@ li { margin-bottom: .35rem; }
   .cookie-actions { width: 100%; }
   .cookie-btn-accept, .cookie-btn-reject { flex: 1; text-align: center; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE OPTIMIZATIONS
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Mobile Nav Hamburger ─────────────────────────────────── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #cbd5e1;
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease, background .2s ease;
+}
+
+.nav-toggle:hover span { background: var(--amber); }
+
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: translateX(-6px); }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--navy-dark);
+    border-bottom: 3px solid var(--amber);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    gap: 0;
+    z-index: 99;
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  }
+
+  .site-nav.nav-open { max-height: 500px; }
+
+  .site-nav li { width: 100%; }
+
+  .site-nav a {
+    display: block;
+    padding: .85rem 1.5rem;
+    font-size: .975rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+
+  .site-nav li:last-child a { border-bottom: none; }
+
+  .nav-cta {
+    margin: .4rem 1rem .6rem !important;
+    border-radius: var(--radius-sm) !important;
+    text-align: center;
+    padding: .7rem 1rem !important;
+  }
+}
+
+/* ── Section / Hero Padding ───────────────────────────────── */
+@media (max-width: 600px) {
+  .hero { padding: 2.5rem 0 2rem; }
+  .section { padding: 2rem 0; }
+  .section-sm { padding: 1.25rem 0; }
+  .page-header { padding: 1.5rem 0; }
+  .site-footer { padding: 2rem 0 1.25rem; margin-top: 2rem; }
+}
+
+/* ── Container Padding ────────────────────────────────────── */
+@media (max-width: 480px) {
+  .container { padding: 0 .85rem; }
+}
+
+/* ── Hero Stats Row ───────────────────────────────────────── */
+@media (max-width: 700px) {
+  .hero-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+  }
+  .hero-stat { min-width: 90px; padding: .9rem 1rem; }
+  .hero-stat-number { font-size: 1.6rem; }
+}
+
+/* ── Hero Actions ─────────────────────────────────────────── */
+@media (max-width: 420px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* ── Page Header Text ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .page-header h1 { font-size: clamp(1.35rem, 5vw, 1.75rem); }
+  .page-header p { font-size: .88rem; }
+}
+
+/* ── Article Tables: Horizontal Scroll ───────────────────── */
+@media (max-width: 640px) {
+  article table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  article table thead,
+  article table tbody,
+  article table tr { display: table; width: 100%; table-layout: auto; }
+  article table td,
+  article table th { white-space: nowrap; min-width: 80px; }
+  article table td:first-child,
+  article table th:first-child { min-width: 130px; }
+}
+
+/* ── Override Inline 2-Column Grids on Mobile ─────────────── */
+@media (max-width: 580px) {
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Tool Card title/desc used in article guide cards ─────── */
+.tool-card-title {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .2rem;
+  line-height: 1.3;
+}
+.tool-card-desc {
+  font-size: .82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ── Calculator / Card Padding on Mobile ─────────────────── */
+@media (max-width: 480px) {
+  .card-body { padding: 1rem; }
+  .calc-header { padding: 1.1rem 1rem; }
+  .results-panel { padding: 1.1rem 1rem; }
+  .results-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Wattage Table Scroll ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .data-table { min-width: 420px; }
+  .data-table th, .data-table td { padding: .5rem .65rem; font-size: .82rem; }
+}
+
+/* ── Footer Bottom on Mobile ──────────────────────────────── */
+@media (max-width: 480px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .6rem;
+  }
+  .footer-disclaimer { font-size: .7rem; }
+}
+
+/* ── Info Box: Stack on Very Small Screens ────────────────── */
+@media (max-width: 420px) {
+  .info-box { flex-direction: column; gap: .4rem; }
+}
+
+/* ── Active footer link ───────────────────────────────────── */
+.footer-links a.active { color: var(--amber); }
+
