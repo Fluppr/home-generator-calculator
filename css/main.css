@@ -1405,6 +1405,14 @@ li { margin-bottom: .35rem; }
 @media (max-width: 700px) {
   .nav-toggle { display: flex; }
 
+  /* nav wrapper: take no space so logo + toggle fill the header */
+  .header-inner > nav {
+    position: static;
+    flex: 0 0 0;
+    width: 0;
+    overflow: visible;
+  }
+
   .site-nav {
     display: flex !important;
     flex-direction: column;

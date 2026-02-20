@@ -570,16 +570,9 @@ function initNav() {
 
 /* ── Mobile Nav Toggle ────────────────────────────────────── */
 function initMobileNav() {
-  const headerInner = document.querySelector('.header-inner');
+  const btn = document.getElementById('nav-toggle');
   const nav = document.querySelector('.site-nav');
-  if (!headerInner || !nav) return;
-
-  const btn = document.createElement('button');
-  btn.className = 'nav-toggle';
-  btn.setAttribute('aria-label', 'Toggle navigation');
-  btn.setAttribute('aria-expanded', 'false');
-  btn.innerHTML = '<span></span><span></span><span></span>';
-  headerInner.appendChild(btn);
+  if (!btn || !nav) return;
 
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
