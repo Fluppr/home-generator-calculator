@@ -64,4 +64,25 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://www.homegeneratorcalculator.com/how-to-choose-a-generator.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.homegeneratorcalculator.com/generator-safety-tips.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.homegeneratorcalculator.com/generator-runtime-guide.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
