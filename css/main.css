@@ -37,7 +37,7 @@
 /* ── Reset & Base ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -941,6 +941,16 @@ li { margin-bottom: .35rem; }
 
 .table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
 
+/* ── Table Scroll Wrapper ─────────────────────────────────── */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  /* small bottom padding so the horizontal scrollbar is visible
+     even when table is the last element inside .card-body */
+  padding-bottom: 2px;
+}
+
 /* ── Badges / Pills ───────────────────────────────────────── */
 .badge {
   display: inline-flex;
@@ -1266,6 +1276,15 @@ li { margin-bottom: .35rem; }
 /* ── Generic utility classes ──────────────────────────────── */
 .hidden { display: none !important; }
 
+/* ── Grid children: prevent content size from blowing out tracks */
+.page-grid > *,
+.form-grid > *,
+.results-grid > *,
+.tools-grid > *,
+.footer-grid > *,
+.appliance-list > *,
+.hero-inner > * { min-width: 0; }
+
 /* ── Form grid (2-column) ─────────────────────────────────── */
 .form-grid {
   display: grid;
@@ -1507,15 +1526,19 @@ li { margin-bottom: .35rem; }
   article table th:first-child { min-width: 130px; }
 }
 
-/* ── Override Inline 2-Column Grids on Mobile ─────────────── */
-/* Attribute selector catches all inline grid-template-columns:1fr 1fr  */
+/* ── Override Inline 2-Column and 3-Column Grids on Mobile ── */
 @media (max-width: 700px) {
   [style*="grid-template-columns:1fr 1fr"],
   [style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
-  /* index.html Why It Matters section */
+  /* 3-column tools-grid overrides on calc pages */
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
   .why-matters-grid {
     grid-template-columns: 1fr !important;
   }
@@ -1543,11 +1566,22 @@ li { margin-bottom: .35rem; }
   .results-grid { grid-template-columns: 1fr 1fr !important; }
 }
 
-/* ── Wattage Table Scroll ─────────────────────────────────── */
+/* ── Data-table Mobile Scroll ─────────────────────────────── */
+/* Tables are wrapped in .table-scroll in the HTML for reliable
+   horizontal scroll on all browsers/devices */
 @media (max-width: 640px) {
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .data-table { min-width: 420px; }
   .data-table th, .data-table td { padding: .5rem .65rem; font-size: .82rem; }
+}
+
+/* ── iOS Safari: prevent auto-zoom on input focus ─────────── */
+/* iOS zooms the page when a focused input has font-size < 16px,
+   which makes the layout appear broken / content off-screen   */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* ── Footer Bottom on Mobile ──────────────────────────────── */
@@ -1558,6 +1592,22 @@ li { margin-bottom: .35rem; }
     gap: .6rem;
   }
   .footer-disclaimer { font-size: .7rem; }
+}
+
+/* ── Ad Slot Overflow Guard ───────────────────────────────── */
+@media (max-width: 480px) {
+  .ad-slot-rectangle,
+  .ad-slot-large { width: 100%; max-width: 100%; }
+}
+
+/* ── Card Header: wrap long + controls on narrow screens ──── */
+@media (max-width: 480px) {
+  .card-header { flex-wrap: wrap; gap: .5rem; }
+}
+
+/* ── Range Slider Labels: hide 4-item row that overflows ────── */
+@media (max-width: 560px) {
+  .range-labels { display: none; }
 }
 
 /* ── Info Box: Stack on Very Small Screens ────────────────── */

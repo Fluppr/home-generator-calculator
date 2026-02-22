@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXG4P469W5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KXG4P469W5');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generator Runtime Estimator — How Long Will My Generator Run? | Home Generator Calculator</title>
   <meta name="description" content="Free generator runtime calculator. Enter generator wattage, tank size, and load percentage. Get estimated runtime in hours, gallons per hour, and total fuel cost.">
@@ -17,7 +25,8 @@
   <meta name="twitter:description" content="Free generator runtime calculator. Enter generator wattage, tank size, and load percentage. Get estimated runtime in hours and total fuel cost.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="shortcut icon" href="favicon.svg">
-  <link rel="stylesheet" href="css/main.css?v=4">
+  <link rel="stylesheet" href="css/main.css?v=7">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8545823582417489" crossorigin="anonymous"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,7 +124,7 @@
             <div class="form-group" style="margin-top:.5rem;">
               <label class="form-label" for="rt-load">Current Load: <span id="rt-load-display" style="color:var(--amber);">50%</span></label>
               <input type="range" id="rt-load" class="range-input" min="25" max="100" step="5" value="50">
-              <div style="display:flex; justify-content:space-between; font-size:.78rem; color:var(--text-muted); margin-top:.3rem;">
+              <div class="range-labels" style="display:flex; justify-content:space-between; font-size:.78rem; color:var(--text-muted); margin-top:.3rem;">
                 <span>25% (very light)</span>
                 <span>50% (typical)</span>
                 <span>75% (heavy)</span>
@@ -166,7 +175,7 @@
 
             <p>Manufacturer runtime specs are virtually always published <em>at 50% load</em>. When you run a generator at 75–100% load you'll see significantly shorter runtime. Here's a general reference for common generator sizes:</p>
 
-            <table class="data-table" style="margin: 1rem 0;">
+            <div class="table-scroll"><table class="data-table" style="margin: 1rem 0;">
               <thead>
                 <tr>
                   <th>Generator Size</th>
@@ -201,7 +210,7 @@
                   <td>~6 hrs</td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
 
             <h3 style="margin:1.25rem 0 .5rem;">Why Load Percentage Matters</h3>
             <p>Generators use a throttle-governed engine — the engine works harder as load increases, burning more fuel per hour. The relationship isn't perfectly linear; at very light loads (under 30%) some generators actually become <em>less efficient</em> per watt produced. The sweet spot for most portable generators is 50–75% of rated output.</p>
@@ -306,7 +315,7 @@
             <h4 style="color:white; margin:0;">⛽ Fuel Burn Rates</h4>
           </div>
           <div class="card-body" style="padding:0;">
-            <table class="data-table" style="font-size:.82rem;">
+            <div class="table-scroll"><table class="data-table" style="font-size:.82rem;">
               <thead>
                 <tr>
                   <th>Watts</th>
@@ -321,7 +330,7 @@
                 <tr><td>10,000W</td><td class="running-watts">1.00</td></tr>
                 <tr><td>12,000W</td><td class="running-watts">1.19</td></tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
 
